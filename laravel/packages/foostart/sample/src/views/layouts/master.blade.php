@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Abundance eCommerce Theme Demo | Just another Kriesi.at Theme Demos Sites site</title>
+        <title>The Factory</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -18,11 +18,11 @@
         <script src="{{asset('js/bootstrap.min.js')}}"></script>              
         <script src="{{asset('js/menu.js')}}" ></script>
 
-    </head>
+    </head>  
     <body>
         <div class="type">
             <header>
-                @include('nhom_f.modules.type-f-1')
+                @include('modules.type-1')
             </header>
             <div class="wrap">
                 <div class="container">
@@ -33,7 +33,7 @@
                 </div>
 
                 <footer>
-                    @include('nhom_f.modules.type-f-6')
+                    @include('modules.type-6')
                 </footer>
             </div>   
         </div>

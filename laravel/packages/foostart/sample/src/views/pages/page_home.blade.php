@@ -6,9 +6,9 @@
 @section('sidebar')
 @parent
 
-@include('nhom_f.modules.type-f-2')
-@include('nhom_f.modules.type-f-3')
-@include('nhom_f.modules.type-f-4')
-@include('nhom_f.modules.type-f-5')
+@include('modules.type-2')
+@include('modules.type-3')
+@include('modules.type-4')
+@include('modules.type-5')
 
 @stop
