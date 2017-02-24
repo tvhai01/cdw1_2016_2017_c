@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2017 at 03:26 AM
+-- Generation Time: Feb 24, 2017 at 03:51 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `transactions`
 --
 
-DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `transaction_id` int(11) NOT NULL,
   `transaction_status` varchar(45) NOT NULL,
@@ -43,7 +42,7 @@ CREATE TABLE `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`transaction_id`, `transaction_status`, `transaction_first_name`, `transaction_last_name`, `transaction_phone`, `amount`, `payment`, `payment_info`, `created`) VALUES
+INSERT DELAYED INTO `transactions` (`transaction_id`, `transaction_status`, `transaction_first_name`, `transaction_last_name`, `transaction_phone`, `amount`, `payment`, `payment_info`, `created`) VALUES
 (1, 'transaction_status', 'first_name	', 'last_name', '123456789', '30', 'abcdefghijklmnop', 'abcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnop', 1),
 (2, 'transaction_status2', 'first_name2', 'last_name2', '123789456', '23', 'sdasdasssasdsada', 'abcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnop', 2);
 
