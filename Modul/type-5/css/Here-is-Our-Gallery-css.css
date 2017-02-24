@@ -1,0 +1,38 @@
+.wpb-row {
+  margin-bottom: 60px;
+  background-color: #212121 !important;
+}
+.wpb-row h2 {
+  margin-top: 70px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.wpb-row hr {
+  display: inline-block;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid;
+  width: 60px;
+  border-bottom-width: 4px;
+  border-bottom-color: #db4436;
+  margin: 0 0;
+}
+.wpb-row h4 {
+  font-weight: 300;
+  font-size: 15px;
+  color: #ffffff;
+}
+.wpb-row .pic-wpbrow {
+  padding: 30px 0 30px 0;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.wpb-row .pic-wpbrow .pic-wpbrowmin {
+  padding: 2 2px;
+  height: auto;
+}
+.wpb-row .pic-wpbrow .pic-wpbrowmin img {
+  width: 100%;
+  max-height: 95px;
+}

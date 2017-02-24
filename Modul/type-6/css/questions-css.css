@@ -1,0 +1,110 @@
+body {
+  font-family: OpenSan, sans-serif;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+.row {
+  margin-right: 0;
+}
+.fluid {
+  margin: 50px;
+}
+.fluid .fluid-question ul li {
+  margin: 1px 0 0 1px;
+  display: inline-block;
+  border: 1px solid #e3e3e3;
+  background-color: transparent;
+  color: #666;
+  padding: 14px 20px;
+  margin-right: -4px;
+  transition: 0.3s ease-in;
+  font-size: 14px;
+  cursor: pointer;
+}
+.fluid .fluid-question ul li:hover {
+  background-color: #dcdcdc;
+}
+.fluid .fluid-question ul .active-li {
+  border-color: #106EAA;
+  background-color: #106EAA !important;
+  color: #FFF;
+  cursor: auto;
+}
+.fluid .fluid-question ul .text-li2 {
+  display: none;
+}
+.fluid .fluid-question ul .text-li1 {
+  position: absolute;
+}
+.fluid .fluid-question ul .text-li {
+  border-top: 1px solid #106EAA;
+  background-color: #fff;
+  padding: 14px 20px;
+}
+.fluid .fluid-question ul .text-li p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.fluid .fluid-titles .fluid-titles-panel h4 {
+  transition: 0.3s ease-in;
+  padding: 14px 20px 14px 30px;
+  font-size: 15px;
+  color: #666;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
+.fluid .fluid-titles .fluid-titles-panel h4 i {
+  margin-right: 14px;
+}
+.fluid .fluid-titles .fluid-titles-panel h4 .fa-minus,
+.fluid .fluid-titles .fluid-titles-panel h4 .fa-plus {
+  float: right;
+}
+.fluid .fluid-titles .fluid-titles-panel h4:hover {
+  background-color: #dcdcdc;
+}
+.fluid .fluid-titles .fluid-titles-panel p {
+  padding: 14px 20px;
+  line-height: 1.714;
+  font-size: 15px;
+  margin: 0;
+  display: none;
+}
+.fluid .fluid-titles .fluid-titles-panel .active-titles-panel {
+  border-color: #106EAA;
+  background-color: #106EAA !important;
+  color: #FFF;
+  cursor: auto;
+}
+.fluid .fluid-titles .fluid-titles-panel .active-titles-panel-p {
+  display: block;
+}
+@media (max-width: 991px) {
+  .fluid .fluid-question ul li {
+    display: block;
+  }
+  .fluid .fluid-question ul .text-li {
+    position: static;
+    border: none;
+  }
+}
+@media (max-width: 768px) {
+  .fluid-question ul li {
+    display: block !important;
+  }
+  .fluid-question ul .text-li {
+    border: none;
+  }
+  .fluid-question ul .text-li1 {
+    position: static !important;
+  }
+}
