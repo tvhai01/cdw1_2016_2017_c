@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App;
 
-class Sample extends Model {
+class Catalog extends Model {
 
-    protected $table = 'samples';
-    protected $primarykey = 'sample_id';
-    protected $fillable = array('sample_name');
+    protected $table = 'catalogs';
+    protected $primarykey = 'catalog_id';
+    protected $fillable = array('catalog_name', 'catalog_parentid', 'catalog_sortoder');
     public $timestamps = false;
 
     public function getData() {
