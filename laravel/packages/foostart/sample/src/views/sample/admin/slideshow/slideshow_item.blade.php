@@ -1,4 +1,5 @@
 
+
 @if( ! $slideshows->isEmpty() )
 <table class="table table-hover">
     <thead>

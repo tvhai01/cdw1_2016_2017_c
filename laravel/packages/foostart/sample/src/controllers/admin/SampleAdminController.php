@@ -7,22 +7,26 @@ use Route,
     Redirect;
 use Foostart\Sample\Models\Samples;
 use Foostart\Sample\Models\Slideshow;
+use Foostart\Sample\Models\Samplescategory;
 /**
  * Validators
  */
 use Foostart\Sample\Validators\SampleAdminValidator;
 use Foostart\Sample\Validators\SlideshowAdminValidator;
+use Foostart\Sample\Validators\SampleCategoryAdminValidator;
 class SampleAdminController extends Controller {
 
     public $data_view = array();
 
     private $obj_sample = NULL;
     private $obj_slideshow = NULL;
+    private $obj_sample_category = NULL;
     private $obj_validator = NULL;
 
     public function __construct() {
         $this->obj_sample = new Samples();
         $this->obj_slideshow = new Slideshow();
+        $this->obj_sample_category = new Samplescategory();
     }
 
     /**
@@ -286,4 +290,140 @@ class SampleAdminController extends Controller {
         return Redirect::route("admin_slideshow");
     }
     /*-------------------------END SLIDESHOW---------------------------*/
+    /**
+     *
+     * @return type
+     */
+    public function index_category(Request $request) {
+
+        $params = array();
+
+        $list_sample_category = $this->obj_sample_category->get_samples_category($params);
+
+        $this->data_view = array_merge($this->data_view, array(
+            'samples_category' => $list_sample_category,
+            'request' => $request
+        ));
+        return view('sample::sample.admin.sample_category.sample_category_list', $this->data_view);
+    }
+
+    /**
+     *
+     * @return type
+     */
+    public function edit_sample_category(Request $request) {
+
+        $sample_category = NULL;
+        $sample_category_id = (int) $request->get('id');
+        //var_dump($sample_category_id);
+        
+
+
+        if (!empty($sample_category_id) && (is_int($sample_category_id))) {
+            $sample_category = $this->obj_sample_category->find($sample_category_id);
+            //var_dump($sample_category->toArray());
+
+        }
+
+        $this->data_view = array_merge($this->data_view, array(
+            'sample_category' => $sample_category,
+            'request' => $request
+        ));
+        return view('sample::sample.admin.sample_category.sample_category_edit', $this->data_view);
+    }
+    /**
+     *
+     * @return type
+     */
+    public function post_sample_category(Request $request) {
+                $this->obj_validator = new SampleCategoryAdminValidator();
+
+
+        $input = $request->all();
+
+        $sample_category_id = (int) $request->get('id');
+        $sample_category = NULL;
+
+
+        $data = array();
+
+        if (!$this->obj_validator->validate($input)) {
+
+            $data['errors'] = $this->obj_validator->getErrors();
+
+            if (!empty($sample_category_id) && is_int($sample_category_id)) {
+
+                $sample_category = $this->obj_sample_category->find($sample_category_id);
+            }
+
+        } else {
+            if (!empty($sample_category_id) && is_int($sample_category_id)) {
+
+                $sample_category = $this->obj_sample_category->find($sample_category_id);
+
+                if (!empty($sample_category)) {
+
+                    $input['sample_category_id'] = $sample_category_id;
+                    $sample_category = $this->obj_sample_category->update_sample_category($input);
+
+                    //Message
+                    \Session::flash('message', trans('sample::sample.message_update_successfully'));
+                    return Redirect::route("admin_sample_category.edit", ["id" => $sample_category->sample_category_id]);
+                } else {
+
+                    //Message
+                    \Session::flash('message', trans('sample::sample.message_update_unsuccessfully'));
+                }
+            } else {
+
+                $sample_category = $this->obj_sample_category->add_sample_category($input);
+
+                if (!empty($sample_category)) {
+
+                    //Message
+                    \Session::flash('message', trans('sample::sample.message_add_successfully'));
+                    return Redirect::route("admin_sample_category.edit", ["id" => $sample_category->sample_category_id]);
+                } else {
+
+                    //Message
+                    \Session::flash('message', trans('sample::sample.message_add_unsuccessfully'));
+                }
+            }
+        }
+
+        $this->data_view = array_merge($this->data_view, array(
+            'sample_category' => $sample_category,
+            'request' => $request,
+        ), $data);
+
+        return view('sample::sample.admin.sample_category.sample_category_edit', $this->data_view);
+    }
+    /**
+     *s
+     * @return type
+     */
+    public function delete_category(Request $request) {
+
+         $sample_category = NULL;
+        $sample_category_id = $request->get('id');
+
+        if (!empty($sample_category_id)) {
+            $sample_category = $this->obj_sample_category->find($sample_category_id);
+
+            if (!empty($sample_category)) {
+                  //Message
+                \Session::flash('message', trans('sample::sample.message_delete_successfully'));
+
+                $sample_category->delete();
+            }
+        } else {
+
+        }
+
+        $this->data_view = array_merge($this->data_view, array(
+            'sample_category' => $sample,
+        ));
+
+        return Redirect::route("admin_sample_category");
+    }
 }

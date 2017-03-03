@@ -66,7 +66,7 @@ class SampleServiceProvider extends ServiceProvider {
             global $request;
             $sample_id = $request->get('id');
             $is_action = empty($sample_id)?'add':'edit';
-
+            $is_action1 = empty($sample_category_id)?'add':'edit';
             $view->with('sidebar_items', [
 
                 //list
@@ -77,6 +77,11 @@ class SampleServiceProvider extends ServiceProvider {
                 //add
                 trans('sample::sample_admin.'.$is_action) => [
                     'url' => URL::route('admin_sample.edit'),
+                    "icon" => '<i class="fa fa-users"></i>'
+                ],
+                //categories add
+                trans('sample::sample_category_admin.'.$is_action) => [
+                    'url' => URL::route('admin_sample_category.edit'),
                     "icon" => '<i class="fa fa-users"></i>'
                 ],
             ]);

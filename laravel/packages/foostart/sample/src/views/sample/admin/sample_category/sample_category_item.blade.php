@@ -1,4 +1,4 @@
-@if( ! $samples->isEmpty() )
+@if( ! $samples_category->isEmpty() )
 <table class="table table-hover">
     <thead>
         <tr>
@@ -10,19 +10,19 @@
     </thead>
     <tbody>
         <?php
-            $nav = $samples->toArray();
+            $nav = $samples_category->toArray();
             $counter = ($nav['current_page'] - 1) * $nav['per_page'] + 1;
         ?>
-        @foreach($samples as $sample)
+        @foreach($samples_category as $sample_category)
         <tr>
             <td>
                 <?php echo $counter; $counter++ ?>
             </td>
-            <td>{!! $sample->sample_id !!}</td>
-            <td>{!! $sample->sample_name !!}</td>
+            <td>{!! $sample_category->sample_category_id !!}</td>
+            <td>{!! $sample_category->sample_category_name !!}</td>
             <td>
-                <a href="{!! URL::route('admin_sample.edit', ['id' => $sample->sample_id]) !!}"><i class="fa fa-edit fa-2x"></i></a>
-                <a href="{!! URL::route('admin_sample.delete',['id' =>  $sample->sample_id, '_token' => csrf_token()]) !!}" class="margin-left-5 delete"><i class="fa fa-trash-o fa-2x"></i></a>
+                <a href="{!! URL::route('admin_sample_category.edit', ['id' => $sample_category->sample_category_id]) !!}"><i class="fa fa-edit fa-2x"></i></a>
+                <a href="{!! URL::route('admin_sample_category.delete',['id' =>  $sample_category->sample_category_id, '_token' => csrf_token()]) !!}" class="margin-left-5 delete"><i class="fa fa-trash-o fa-2x"></i></a>
                 <span class="clearfix"></span>
             </td>
         </tr>
@@ -33,5 +33,5 @@
 <span class="text-warning"><h5>No results found.</h5></span>
 @endif
 <div class="paginator">
-    {!! $samples->appends($request->except(['page']) )->render() !!}
+    {!! $samples_category->appends($request->except(['page']) )->render() !!}
 </div>

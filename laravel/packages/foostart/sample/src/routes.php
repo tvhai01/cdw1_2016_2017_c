@@ -88,5 +88,34 @@ Route::group(['middleware' => ['web']], function () {
          * list
          */
         /*-------------------------------------SLIDESHOW-------------------------------------*/
+        /*------------------------------------CATEGORIES-----------------------------------*/
+        /**
+         * list
+         */
+        Route::get('admin/sample_category', [
+            'as' => 'admin_sample_category',
+            'uses' => 'Foostart\Sample\Controllers\Admin\SampleAdminController@index_category'
+        ]);
+
+          Route::get('admin/sample_category/edit', [
+            'as' => 'admin_sample_category.edit',
+            'uses' => 'Foostart\Sample\Controllers\Admin\SampleAdminController@edit_sample_category'
+        ]);
+          /**
+         * post
+         */
+        Route::post('admin/sample_category/edit', [
+            'as' => 'admin_sample_category.post',
+            'uses' => 'Foostart\Sample\Controllers\Admin\SampleAdminController@post_sample_category'
+        ]);
+        
+        /**
+         * delete
+         */
+        Route::get('admin/sample_category/delete', [
+            'as' => 'admin_sample_category.delete',
+            'uses' => 'Foostart\Sample\Controllers\Admin\SampleAdminController@delete_sample_category'
+        ]);
+          /*------------------------------------CATEGORIES----------------------------------*/
     });
 });
