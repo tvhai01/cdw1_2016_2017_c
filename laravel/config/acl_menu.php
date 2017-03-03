@@ -79,5 +79,14 @@ return [
             "link" => '/admin/sample',
             "permissions" => ["_superadmin","_sample"]
         ],
+        [
+            /*
+             * Route to edit the current user profile
+             */
+            "name" => "SlideShow",
+            "route" => "admin_slideshow",
+            "link" => '/admin/slideshow',
+            "permissions" => ["_superadmin","_slideshow"]
+        ],
     ]
 ];

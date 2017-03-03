@@ -37,7 +37,9 @@ return [
      * Message
      */
     'message_update_successfully' => 'Update sample item successfully',
+    'message_update_unsuccessfully' => 'Update sample item Unsuccessfully',
     'message_add_successfully' => 'Add new sample item successfully',
+    'message_add_unsuccessfully' => 'Add new sample item Unsuccessfully',
     'message_delete_successfully' => 'Delete sample item successfully',
 
     /**

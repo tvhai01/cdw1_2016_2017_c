@@ -1,7 +1,7 @@
 @extends('laravel-authentication-acl::admin.layouts.base-2cols')
 
 @section('title')
-Admin area: {{ trans('sample::sample_admin.page_edit') }}
+Admin area: {{ trans('sample::sample_admin.sample.page_edit') }}
 @stop
 @section('content')
 <div class="row">
@@ -69,7 +69,7 @@ Admin area: {{ trans('sample::sample_admin.page_edit') }}
         </div>
 
         <div class='col-md-4'>
-            @include('sample::sample.admin.sample_search')
+            @include('sample::sample.admin.sample.sample_search')
         </div>
 
     </div>

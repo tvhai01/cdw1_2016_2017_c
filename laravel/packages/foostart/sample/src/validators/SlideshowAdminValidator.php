@@ -1,15 +1,15 @@
 <?php
-namespace Foostart\Sample\Validators;
+namespace Foostart\slideshow\Validators;
 
 use Event;
 use \LaravelAcl\Library\Validators\AbstractValidator;
 
 use Illuminate\Support\MessageBag as MessageBag;
 
-class SampleAdminValidator extends AbstractValidator
+class SlideshowAdminValidator extends AbstractValidator
 {
     protected static $rules = array(
-        'sample_name' => 'required',
+        'slideshow_name' => 'required',
     );
 
     protected static $messages = [];
@@ -36,7 +36,7 @@ class SampleAdminValidator extends AbstractValidator
 
     public function messages() {
         self::$messages = [
-            'required' => ':attribute '.trans('sample::sample_admin.required')
+            'required' => ':attribute '.trans('sample::slideshow_admin.required')
         ];
     }
 
@@ -44,12 +44,12 @@ class SampleAdminValidator extends AbstractValidator
 
         $flag = TRUE;
 
-        $min_lenght = config('sample.name_min_lengh');
-        $max_lenght = config('sample.name_max_lengh');
+        $min_lenght = config('slideshow.name_min_lengh');
+        $max_lenght = config('slideshow.name_max_lengh');
 
-        $sample_name = @$input['sample_name'];
+        $slideshow_name = @$input['slideshow_name'];
 
-        if ((strlen($sample_name) <= $min_lenght)  || ((strlen($sample_name) >= $max_lenght))) {
+        if ((strlen($slideshow_name) <= $min_lenght)  || ((strlen($slideshow_name) >= $max_lenght))) {
             $this->errors->add('name_unvalid_length', trans('name_unvalid_length', ['NAME_MIN_LENGTH' => $min_lenght, 'NAME_MAX_LENGTH' => $max_lenght]));
             $flag = TRUE;
         }
