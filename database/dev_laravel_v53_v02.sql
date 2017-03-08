@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2017 at 02:12 AM
+-- Generation Time: Mar 08, 2017 at 02:24 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -232,6 +232,14 @@ CREATE TABLE `post` (
   `post_name` varchar(45) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`post_id`, `post_name`) VALUES
+(1, 'People name'),
+(2, 'People name');
+
 -- --------------------------------------------------------
 
 --
@@ -242,6 +250,14 @@ CREATE TABLE `posts_categories` (
   `post_category_id` int(11) NOT NULL,
   `post_category_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `posts_categories`
+--
+
+INSERT INTO `posts_categories` (`post_category_id`, `post_category_name`) VALUES
+(1, 'category name'),
+(2, 'category name');
 
 -- --------------------------------------------------------
 
@@ -779,7 +795,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `posts_categories`
 --
 ALTER TABLE `posts_categories`
-  MODIFY `post_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `profile_field`
 --
