@@ -1,0 +1,72 @@
+.type .container {
+  width: 100%;
+  margin: 0 auto;
+}
+.type .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.type .col-md-6 {
+  width: 50%;
+}
+.type .clear {
+  clear: both;
+}
+.type * {
+  box-sizing: border-box;
+}
+.type .hinh img {
+  max-width: 100%;
+  height: auto;
+  padding: 15px;
+}
+.type .nen {
+  background-image: url(http://themes.webdevia.com/factory/wp-content/uploads/2016/05/table-bg.jpg?id=2305) !important;
+}
+.type .nen h2 {
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+}
+.type .hinh .hinhanh {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 0px;
+}
+.type .title {
+  background-color: #31aae1;
+  color: #fff;
+  margin-top: -17px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 0;
+  position: relative;
+  width: 80%;
+  text-transform: uppercase;
+  margin-top: -34px;
+  text-align: center;
+}
+.type .hinhanh h4,
+.type .hinhanh h3 {
+  display: inline;
+  font-size: 13px;
+}
+.type .textleft {
+  text-align: left !important;
+}
+.type .textleft p {
+  color: #717171;
+  font-size: 13px;
+  margin-top: 18px;
+  padding: 0 6px;
+  text-align: center;
+}
+.type .icons ul {
+  margin: 0;
+}
+.type .icons li {
+  display: inline-block;
+  margin: 0;
+  padding: 25px 0;
+  margin-left: 40px;
+}
