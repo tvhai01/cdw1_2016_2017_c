@@ -20,8 +20,9 @@ class SampleServiceProvider extends ServiceProvider {
         /**
          * Publish
          */
-        $this->publishes([
-        ]);
+         $this->publishes([
+            __DIR__.'/config/sample_admin.php' => config_path('sample_admin.php'),
+        ],'config');
 
         $this->loadViewsFrom(__DIR__ . '/views', 'sample');
 
@@ -36,6 +37,11 @@ class SampleServiceProvider extends ServiceProvider {
          * Load view composer
          */
         $this->sampleViewComposer($request);
+
+         $this->publishes([
+                __DIR__.'/../database/migrations/' => database_path('migrations')
+            ], 'migrations');
+
     }
 
     /**
@@ -65,12 +71,15 @@ class SampleServiceProvider extends ServiceProvider {
         view()->composer('sample::sample*', function ($view) {
             global $request;
             $sample_id = $request->get('id');
-            $is_action = empty($sample_id)?'add':'edit';
-            $is_action1 = empty($sample_category_id)?'add':'edit';
+            $is_action = empty($sample_id)?'page_add':'page_edit';
+
             $view->with('sidebar_items', [
 
+                /**
+                 * Samples
+                 */
                 //list
-                trans('sample::sample_admin.list') => [
+                trans('sample::sample_admin.page_list') => [
                     'url' => URL::route('admin_sample'),
                     "icon" => '<i class="fa fa-users"></i>'
                 ],
@@ -79,9 +88,13 @@ class SampleServiceProvider extends ServiceProvider {
                     'url' => URL::route('admin_sample.edit'),
                     "icon" => '<i class="fa fa-users"></i>'
                 ],
-                //categories add
-                trans('sample::sample_category_admin.'.$is_action) => [
-                    'url' => URL::route('admin_sample_category.edit'),
+
+                /**
+                 * Categories
+                 */
+                //list
+                trans('sample::sample_admin.page_category_list') => [
+                    'url' => URL::route('admin_sample_category'),
                     "icon" => '<i class="fa fa-users"></i>'
                 ],
             ]);

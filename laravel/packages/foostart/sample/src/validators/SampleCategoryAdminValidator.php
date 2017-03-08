@@ -44,8 +44,8 @@ class SampleCategoryAdminValidator extends AbstractValidator
 
         $flag = TRUE;
 
-        $min_lenght = config('sample_category_.name_min_lengh');
-        $max_lenght = config('sample_category_.name_max_lengh');
+        $min_lenght = config('sample_admin_.name_min_lengh');
+        $max_lenght = config('sample_admin_.name_max_lengh');
 
         $sample_category_name = @$input['sample_category_name'];
 
