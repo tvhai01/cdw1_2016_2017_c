@@ -79,23 +79,42 @@ return [
             "link" => '/admin/sample',
             "permissions" => ["_superadmin","_sample"]
         ],
+        // [
+        //     /*
+        //      * Route to edit the current user profile
+        //      */
+        //     "name" => "SlideShow",
+        //     "route" => "admin_slideshow",
+        //     "link" => '/admin/slideshow',
+        //     "permissions" => ["_superadmin","_slideshow"]
+        // ],
+        //  [
+        //     /*
+        //      * Route to edit the current user profile
+        //      */
+        //     "name" => "Categories",
+        //     "route" => "admin_sample_category",
+        //     "link" => '/admin/sample_category',
+        //     "permissions" => ["_superadmin","_sample_category"]
+        // ],
         [
             /*
              * Route to edit the current user profile
              */
-            "name" => "SlideShow",
-            "route" => "admin_slideshow",
-            "link" => '/admin/slideshow',
-            "permissions" => ["_superadmin","_slideshow"]
+            "name" => "Post",
+            "route" => "admin_post",
+            "link" => '/admin/post',
+            "permissions" => ["_superadmin","_post"]
         ],
-         [
+        [
             /*
              * Route to edit the current user profile
              */
-            "name" => "Categories",
-            "route" => "admin_sample_category",
-            "link" => '/admin/sample_category',
-            "permissions" => ["_superadmin","_sample_category"]
+            "name" => "Service",
+            "route" => "admin_service",
+            "link" => '/admin/service',
+            "permissions" => ["_superadmin","_service"]
         ],
+
     ]
 ];

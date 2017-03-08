@@ -52,7 +52,7 @@ class SampleAdminValidator extends AbstractValidator
 
         if ((strlen($sample_name) < $min_lenght)  || ((strlen($sample_name) > $max_lenght))) {
             $this->errors->add('name_unvalid_length', trans('name_unvalid_length', ['NAME_MIN_LENGTH' => $min_lenght, 'NAME_MAX_LENGTH' => $max_lenght]));
-            $flag = FALSE;
+            $flag = TRUE;
         }
 
         return $flag;

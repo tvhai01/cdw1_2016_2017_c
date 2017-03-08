@@ -1,4 +1,6 @@
-<?php namespace Foostart\Sample\Controllers\Admin;
+<?php
+
+namespace Foostart\Sample\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +16,6 @@ use Foostart\Sample\Validators\SampleAdminValidator;
 class SampleAdminController extends Controller {
 
     public $data_view = array();
-
     private $obj_sample = NULL;
     private $obj_validator = NULL;
 
@@ -27,10 +28,10 @@ class SampleAdminController extends Controller {
      * @return type
      */
     public function index(Request $request) {
-
         $params = $request->all();
 
         $list_sample = $this->obj_sample->get_samples($params);
+
 
         $this->data_view = array_merge($this->data_view, array(
             'samples' => $list_sample,
@@ -48,7 +49,6 @@ class SampleAdminController extends Controller {
 
         $sample = NULL;
         $sample_id = (int) $request->get('id');
-
 
         if (!empty($sample_id) && (is_int($sample_id))) {
             $sample = $this->obj_sample->find($sample_id);
@@ -84,7 +84,6 @@ class SampleAdminController extends Controller {
 
                 $sample = $this->obj_sample->find($sample_id);
             }
-
         } else {
             if (!empty($sample_id) && is_int($sample_id)) {
 
@@ -123,7 +122,7 @@ class SampleAdminController extends Controller {
         $this->data_view = array_merge($this->data_view, array(
             'sample' => $sample,
             'request' => $request,
-        ), $data);
+                ), $data);
 
         return view('sample::sample.admin.sample_edit', $this->data_view);
     }
@@ -141,13 +140,13 @@ class SampleAdminController extends Controller {
             $sample = $this->obj_sample->find($sample_id);
 
             if (!empty($sample)) {
-                  //Message
+                //Message
                 \Session::flash('message', trans('sample::sample_admin.message_delete_successfully'));
 
                 $sample->delete();
             }
         } else {
-
+            
         }
 
         $this->data_view = array_merge($this->data_view, array(
