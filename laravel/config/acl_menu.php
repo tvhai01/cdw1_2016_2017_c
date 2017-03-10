@@ -110,11 +110,10 @@ return [
             /*
              * Route to edit the current user profile
              */
-            "name" => "Service",
-            "route" => "admin_service",
-            "link" => '/admin/service',
-            "permissions" => ["_superadmin","_service"]
+            "name" => "Contact",
+            "route" => "admin_contact",
+            "link" => '/admin/contact',
+            "permissions" => ["_superadmin","_contact"]
         ],
-
     ]
 ];
