@@ -9,12 +9,8 @@ class Services extends Model {
     protected $table = 'services';
     public $timestamps = false;
     protected $fillable = [
-        'service_img',
         'service_title',
-        'service_description_1',
-        'service_img_2  ',
-        'service_description_2',
-        
+         'service_description'
     ];
     protected $primaryKey = 'service_id';
 
@@ -25,8 +21,8 @@ class Services extends Model {
      */
     public function get_services($params = array()) {
         $eloquent = self::orderBy('service_id');
-        
-        //service_name
+
+        //service_title
         if (!empty($params['service_title'])) {
             $eloquent->where('service_title', 'like', '%'. $params['service_title'].'%');
         }
@@ -54,12 +50,8 @@ class Services extends Model {
 
         if (!empty($service)) {
 
-            $service->service_img = $input['service_img'];
             $service->service_title = $input['service_title'];
-            $service->service_description_1 = $input['service_description_1'];
-            $service->service_img_2 = $input['service_img_2'];
-            $service->service_description_2 = $input['service_description_2'];
-
+            $service->service_description = $input['service_description'];
             $service->save();
 
             return $service;
@@ -76,11 +68,8 @@ class Services extends Model {
     public function add_service($input) {
 
         $service = self::create([
-                    'service_img' => $input['service_img'],
                     'service_title' => $input['service_title'],
-                    'service_description_1' => $input['service_description_1'],
-                    'service_img_2' => $input['service_img_2'],
-                    'service_description_2' => $input['service_description_2'],
+                    'service_description' => $input['service_description'],
         ]);
         return $service;
     }

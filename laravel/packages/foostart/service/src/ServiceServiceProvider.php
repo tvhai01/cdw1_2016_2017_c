@@ -89,14 +89,14 @@ class ServiceServiceProvider extends ServiceProvider {
                     "icon" => '<i class="fa fa-users"></i>'
                 ],
 
-                /**
-                 * Categories
-                 */
-                //list
-                trans('service::service_admin.page_category_list') => [
-                    'url' => URL::route('admin_service_category'),
-                    "icon" => '<i class="fa fa-users"></i>'
-                ],
+//                /**
+//                 * Categories
+//                 */
+//                //list
+//                trans('service::service_admin.page_category_list') => [
+//                    'url' => URL::route('admin_service_category'),
+//                    "icon" => '<i class="fa fa-users"></i>'
+//                ],
             ]);
             //
         });

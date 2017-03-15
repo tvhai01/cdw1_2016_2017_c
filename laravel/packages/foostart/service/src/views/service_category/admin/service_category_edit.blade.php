@@ -16,8 +16,8 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
                 </div>
                 <!-- ERRORS NAME  -->
                 {{-- model general errors from the form --}}
-                @if($errors->has('service_category_title') )
-                    <div class="alert alert-danger">{!! $errors->first('service_category_title') !!}</div>
+                @if($errors->has('service_category_name') )
+                    <div class="alert alert-danger">{!! $errors->first('service_category_name') !!}</div>
                 @endif
                 <!-- /END ERROR NAME -->
                 
@@ -43,7 +43,7 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
                             <!--END SAMPLE CATEGORIES ID  -->
 
                             <!-- SAMPLE NAME TEXT-->
-                            @include('service::service_category.elements.text', ['name' => 'service_category_title'])
+                            @include('service::service_category.elements.text', ['name' => 'service_category_name'])
                             <!-- /END SAMPLE NAME TEXT -->
                             
                             {!! Form::hidden('id',@$service->service_category_id) !!}

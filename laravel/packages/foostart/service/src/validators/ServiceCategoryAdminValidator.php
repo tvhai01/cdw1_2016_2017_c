@@ -9,7 +9,7 @@ use Illuminate\Support\MessageBag as MessageBag;
 class ServiceCategoryAdminValidator extends AbstractValidator
 {
     protected static $rules = array(
-        'service_category_title' => 'required',
+        'service_category_name' => 'required',
     );
 
     protected static $messages = [];
@@ -47,9 +47,9 @@ class ServiceCategoryAdminValidator extends AbstractValidator
         $min_lenght = config('service_admin_.name_min_lengh');
         $max_lenght = config('service_admin_.name_max_lengh');
 
-        $service_category_title = @$input['service_category_title'];
+        $service_category_name = @$input['service_category_name'];
 
-        if ((strlen($service_category_title) < $min_lenght)  || ((strlen($service_category_title) > $max_lenght))) {
+        if ((strlen($service_category_name) <= $min_lenght)  || ((strlen($service_category_name) >= $max_lenght))) {
             $this->errors->add('name_unvalid_length', trans('name_unvalid_length', ['NAME_MIN_LENGTH' => $min_lenght, 'NAME_MAX_LENGTH' => $max_lenght]));
             $flag = TRUE;
         }

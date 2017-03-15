@@ -24,16 +24,13 @@ return [
     'form_add' => 'Add new service item',
     'form_edit' => 'Update service item',
     'name' => 'Name',
-    'img'=>'Image 1',
-    'title'=> 'Title',
-    'description_1' =>'Description 1',
-    'img_2' => "Image 2",
-    'description_2' =>  'Description 2',
+    'title' => 'Title',
+    'description' => 'Description',
     'service_required_name' => 'Required name',
     'required' => 'is required',
     'search' => 'Search',
-    'service_name_label' => 'Service name:',
-    'service_name_placeholder' => 'service name',
+    'service_title_label' => 'Service name:',
+    'service_title_placeholder' => 'service name',
     'service_category_name'=> 'Service category name',
 
     /**
@@ -49,7 +46,7 @@ return [
      */
     'title_unvalid_length' => 'Unvalid lenght title. Allow from: <b>:TITLE_MIN_LENGTH</b> to <b>:TITLE_MAX_LENGTH</b>.',
 
-    'service_name' => 'Service name',
+    'service_title' => 'Service name',
 
     /**
      * Validator message
@@ -63,5 +60,5 @@ return [
     'page_category_list' => 'Categories',
     'service_category_add_button' => 'Add new service category',
     'service_categoty_id' => 'Category ID',
-    'service_categoty_title' => 'Category title',    
+    'service_categoty_name' => 'Category name',    
 ];

@@ -9,8 +9,12 @@
 
         <!--TITLE-->
         <div class="form-group">
-            {!! Form::label('service_title', trans('service::service_admin.service_name_label')) !!}
-            {!! Form::text('service_title', @$params['service_title'], ['class' => 'form-control', 'placeholder' => trans('service::service_admin.service_name_placeholder')]) !!}
+            {!! Form::label('service_title', trans('service::service_admin.service_title_label')) !!}
+            {!! Form::text('service_title', @$params['service_title'], ['class' => 'form-control', 'placeholder' => trans('service::service_admin.service_title_placeholder')]) !!}
+        </div
+        <div class="form-group">
+            {!! Form::label('service_description', trans('service::service_admin.service_title_label')) !!}
+            {!! Form::text('service_description', @$params['service_description'], ['class' => 'form-control', 'placeholder' => trans('service::service_admin.service_title_placeholder')]) !!}
         </div>
         <!--/END TITLE-->
 

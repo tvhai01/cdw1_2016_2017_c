@@ -16,12 +16,12 @@
                 {{ trans('service::service_admin.order') }}
             </td>
 
-            <th style='width:30%'>
+            <th style='width:10%'>
                 {{ trans('service::service_admin.service_categoty_id') }}
             </th>
 
             <th style='width:50%'>
-                {{ trans('service::service_admin.service_categoty_title') }}
+                {{ trans('service::service_admin.service_categoty_name') }}
             </th>
 
             <th style='width:20%'>
@@ -50,7 +50,7 @@
 
             <!--SAMPLE CATEGORY NAME-->
             <td>
-                {!! $service_category->service_category_title !!}
+                {!! $service_category->service_category_name !!}
             </td>
             <!--/END SAMPLE CATEGORY NAME-->
 

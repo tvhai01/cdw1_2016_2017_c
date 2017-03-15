@@ -8,7 +8,7 @@ Admin area: {{ trans('service::service_admin.page_list') }}
 
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-10">
+        <div class="col-md-8">
 
             <div class="panel panel-info">
 
@@ -35,7 +35,7 @@ Admin area: {{ trans('service::service_admin.page_list') }}
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
             @include('service::service.admin.service_search')
         </div>
     </div>

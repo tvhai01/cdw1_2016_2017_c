@@ -7,7 +7,7 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
 <div class="row">
     <div class="col-md-12">
 
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title bariol-thin">
@@ -17,13 +17,16 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
 
                 {{-- model general errors from the form --}}
                 @if($errors->has('service_title') )
-                    <div class="alert alert-danger">{!! $errors->first('service_title') !!}</div>
+                <div class="alert alert-danger">{!! $errors->first('service_title') !!}</div>
+                @endif
+                @if($errors->has('service_desription') )
+                <div class="alert alert-danger">{!! $errors->first('service_description') !!}</div>
                 @endif
 
                 @if($errors->has('name_unvalid_length') )
-                    <div class="alert alert-danger">{!! $errors->first('name_unvalid_length') !!}</div>
+                <div class="alert alert-danger">{!! $errors->first('name_unvalid_length') !!}</div>
                 @endif
-
+                
                 {{-- successful message --}}
                 <?php $message = Session::get('message'); ?>
                 @if( isset($message) )
@@ -38,9 +41,7 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
 
 
                             <!-- SAMPLE NAME TEXT-->
-                            @include('service::service.elements.text', ['img' => 'service_img', 'title' => 'service_title', 'description_1' => 'service_description_1', 'img_2' =>'service_img_2', 'description_2' => 'service_description_2' ])
-                            
-                            
+                            @include('service::service.elements.text', ['title' => 'service_title','description' => 'service_description'])
                             <!-- /END SAMPLE NAME TEXT -->
                             {!! Form::hidden('id',@$service->service_id) !!}
 
@@ -61,11 +62,6 @@ Admin area: {{ trans('service::service_admin.page_edit') }}
                 </div>
             </div>
         </div>
-
-        <div class='col-md-2'>
-            @include('service::service.admin.service_search')
-        </div>
-
     </div>
 </div>
 @stop

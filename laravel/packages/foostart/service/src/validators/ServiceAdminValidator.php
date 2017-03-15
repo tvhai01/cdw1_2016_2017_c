@@ -54,7 +54,6 @@ class ServiceAdminValidator extends AbstractValidator
             $this->errors->add('name_unvalid_length', trans('name_unvalid_length', ['NAME_MIN_LENGTH' => $min_lenght, 'NAME_MAX_LENGTH' => $max_lenght]));
             $flag = TRUE;
         }
-
         return $flag;
     }
 }

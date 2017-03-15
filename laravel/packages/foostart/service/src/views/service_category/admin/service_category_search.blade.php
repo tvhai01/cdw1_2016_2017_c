@@ -9,8 +9,8 @@
 
         <!--TITLE-->
 		<div class="form-group">
-            {!! Form::label('service_category_title',trans('service::service_admin.service_category_name_label')) !!}
-            {!! Form::text('service_category_title', @$params['service_category_title'], ['class' => 'form-control', 'placeholder' => trans('service::service_admin.service_category_title')]) !!}
+            {!! Form::label('service_category_name',trans('service::service_admin.service_category_name_label')) !!}
+            {!! Form::text('service_category_name', @$params['service_category_name'], ['class' => 'form-control', 'placeholder' => trans('service::service_admin.service_category_name')]) !!}
         </div>
 
         {!! Form::submit(trans('service::service_admin.search').'', ["class" => "btn btn-info pull-right"]) !!}

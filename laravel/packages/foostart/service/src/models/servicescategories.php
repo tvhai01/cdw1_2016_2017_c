@@ -9,15 +9,15 @@ class ServicesCategories extends Model {
     protected $table = 'services_categories';
     public $timestamps = false;
     protected $fillable = [
-        'service_category_title'
+        'service_category_name'
     ];
     protected $primaryKey = 'service_category_id';
 
     public function get_services_categories($params = array()) {
         $eloquent = self::orderBy('service_category_id');
 
-        if (!empty($params['service_category_title'])) {
-            $eloquent->where('service_category_title', 'like', '%'. $params['service_category_title'].'%');
+        if (!empty($params['service_category_name'])) {
+            $eloquent->where('service_category_name', 'like', '%'. $params['service_category_name'].'%');
         }
         $services_category = $eloquent->paginate(10);
         return $services_category;
@@ -39,7 +39,7 @@ class ServicesCategories extends Model {
 
         if (!empty($service)) {
 
-            $service->service_category_title = $input['service_category_title'];
+            $service->service_category_name = $input['service_category_name'];
 
             $service->save();
 
@@ -57,7 +57,7 @@ class ServicesCategories extends Model {
     public function add_service($input) {
 
         $service = self::create([
-                    'service_category_title' => $input['service_category_title'],
+                    'service_category_name' => $input['service_category_name'],
         ]);
         return $service;
     }

@@ -1,4 +1,6 @@
-<?php namespace Foostart\Service\Controllers\Admin;
+<?php
+
+namespace Foostart\Service\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +16,6 @@ use Foostart\Service\Validators\ServiceAdminValidator;
 class ServiceAdminController extends Controller {
 
     public $data_view = array();
-
     private $obj_service = NULL;
     private $obj_validator = NULL;
 
@@ -27,10 +28,10 @@ class ServiceAdminController extends Controller {
      * @return type
      */
     public function index(Request $request) {
-        
         $params = $request->all();
-        
+
         $list_service = $this->obj_service->get_services($params);
+
 
         $this->data_view = array_merge($this->data_view, array(
             'services' => $list_service,
@@ -83,7 +84,6 @@ class ServiceAdminController extends Controller {
 
                 $service = $this->obj_service->find($service_id);
             }
-
         } else {
             if (!empty($service_id) && is_int($service_id)) {
 
@@ -122,7 +122,7 @@ class ServiceAdminController extends Controller {
         $this->data_view = array_merge($this->data_view, array(
             'service' => $service,
             'request' => $request,
-        ), $data);
+                ), $data);
 
         return view('service::service.admin.service_edit', $this->data_view);
     }
@@ -140,13 +140,13 @@ class ServiceAdminController extends Controller {
             $service = $this->obj_service->find($service_id);
 
             if (!empty($service)) {
-                  //Message
+                //Message
                 \Session::flash('message', trans('service::service_admin.message_delete_successfully'));
 
                 $service->delete();
             }
         } else {
-
+            
         }
 
         $this->data_view = array_merge($this->data_view, array(
