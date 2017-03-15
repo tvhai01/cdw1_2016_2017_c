@@ -145,5 +145,15 @@ return [
             "link" => '/admin/testimonial',
             "permissions" => ["_superadmin","_testimonial"]
         ],
+        
+        [
+            /*
+             * Route to edit the current user profile
+             */
+            "name" => "Partner",
+            "route" => "admin_partner",
+            "link" => '/admin/partner',
+            "permissions" => ["_superadmin","_partner"]
+        ],
     ]
 ];

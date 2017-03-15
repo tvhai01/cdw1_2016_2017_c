@@ -163,11 +163,14 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Foostart\Sample\SampleServiceProvider::class,
+        Foostart\Service\ServiceServiceProvider::class,
+        Foostart\Quicktab\QuicktabServiceProvider::class,
         Foostart\Post\PostServiceProvider::class,
         Foostart\Service\ServiceServiceProvider::class,
         Foostart\Quicktab\QuicktabServiceProvider::class,
         Foostart\Contact\ContactServiceProvider::class,
         Foostart\Testimonial\TestimonialServiceProvider::class,
+        Foostart\Partner\PartnerServiceProvider::class,
         /*
          * Package Service Providers...
          */
