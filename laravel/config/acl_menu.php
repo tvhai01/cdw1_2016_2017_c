@@ -106,6 +106,27 @@ return [
             "link" => '/admin/post',
             "permissions" => ["_superadmin","_post"]
         ],
+        
+        [
+            /*
+             * Route to edit the current user profile
+             */
+            "name" => "Service",
+            "route" => "admin_service",
+            "link" => '/admin/service',
+            "permissions" => ["_superadmin","_service"]
+        ],
+        
+        [
+            /*
+             * Route to edit the current user profile
+             */
+            "name" => "Quicktab",
+            "route" => "admin_quicktab",
+            "link" => '/admin/quicktab',
+            "permissions" => ["_superadmin","_quicktab"]
+        ],
+        
         [
             /*
              * Route to edit the current user profile

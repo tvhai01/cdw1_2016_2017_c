@@ -164,6 +164,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Foostart\Sample\SampleServiceProvider::class,
         Foostart\Post\PostServiceProvider::class,
+        Foostart\Service\ServiceServiceProvider::class,
+        Foostart\Quicktab\QuicktabServiceProvider::class,
         Foostart\Contact\ContactServiceProvider::class,
         Foostart\Testimonial\TestimonialServiceProvider::class,
         /*
