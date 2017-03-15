@@ -48,7 +48,6 @@ class ServiceAdminController extends Controller {
 
         $service = NULL;
         $service_id = (int) $request->get('id');
-        var_dump($service_id);
 
         if (!empty($service_id) && (is_int($service_id))) {
             $service = $this->obj_service->find($service_id);
