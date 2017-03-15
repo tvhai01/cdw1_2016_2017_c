@@ -27,8 +27,8 @@
             "Foostart\\Quicktab\\": "packages/foostart/quicktab/src/",
             "Foostart\\Post\\": "packages/foostart/post/src/",
             "Foostart\\Contact\\": "packages/foostart/contact/src/",
-            "Foostart\\Testimonial\\": "packages/foostart/testimonial/src/"
-            
+            "Foostart\\Testimonial\\": "packages/foostart/testimonial/src/",
+            "Foostart\\Partner\\": "packages/foostart/partner/src/"
         }
     },
     "autoload-dev": {
