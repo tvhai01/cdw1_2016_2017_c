@@ -24,7 +24,9 @@
             "App\\": "app/",
             "Foostart\\Sample\\": "packages/foostart/sample/src/",
             "Foostart\\Post\\": "packages/foostart/post/src/",
-            "Foostart\\Contact\\": "packages/foostart/contact/src/"
+            "Foostart\\Contact\\": "packages/foostart/contact/src/",
+            "Foostart\\Testimonial\\": "packages/foostart/testimonial/src/"
+            
         }
     },
     "autoload-dev": {
