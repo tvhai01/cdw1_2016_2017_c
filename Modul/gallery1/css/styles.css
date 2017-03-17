@@ -16,6 +16,8 @@
 }
 .type header {
   background: #0a3f66;
+  max-width: 100%;
+  overflow: hidden;
 }
 .type header .header-left ul {
   font-size: 16px;
